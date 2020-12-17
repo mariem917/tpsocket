@@ -22,14 +22,35 @@ public class Server {
 
         // Read message sent by the client
         String str = inServer.readLine();
-        String strUpper = str.toUpperCase();
-        System.out.println("The msg was " + strUpper);
+       int nombre=0;
+       try{
+       nombre=Integer.prseInt(str);
+       }catch(Exception e);{
+       System.out.println("ce n'est pas un entier");
+       }
+       for(int i=2;i<nombre;i++){
+       if(Premier(i))
+       System.out.println(i);
+       }
 
         // Close in / out
         inServer.close();
-        outServer.close();
+outServer.close();
 
         // Close client socket
         socClient.close();
     }
+    static boolean Premier(int n)
+    {
+    boolean res;
+    res=true;
+    int i=2;
+    while(i<=n/2 && res=true){
+    if(n%2==0)
+        res=false;
+        i++;
+        }
+        return(res);
+        }
+        
 }
